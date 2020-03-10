@@ -1,0 +1,14 @@
+import (
+	"github.com/tebeka/selenium"
+	"testing"
+)
+
+func TestBrowsers(t *testing.T) {
+	caps := selenium.Capabilities{"browserName": "MicrosoftEdge", "version":"18", "platform": "WINDOWS"}
+	wd, err := selenium.NewRemote(caps, "https://b9644b17ca10821e0c6789636af0a196:CFynigTVrmmqlXeAjCqmFsTnCxWHrpfN@browsers.aerokube.com:4444/wd/hub")
+	if err != nil {
+		panic(err)
+	}
+	defer wd.Quit()
+	//Your test logic here...
+}
